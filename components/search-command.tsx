@@ -8,10 +8,10 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { api } from "@/convex/_generated/api";
+import { api } from "@/lib/shim/api";
 import useSearchStore from "@/hooks/use-search-store";
-import { useUser } from "@clerk/clerk-react";
-import { useQuery } from "convex/react";
+import { useUser } from "@/lib/shim/clerk";
+import { useQuery } from "@/lib/shim/convex";
 import { File } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";

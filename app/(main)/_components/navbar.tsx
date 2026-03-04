@@ -1,8 +1,8 @@
 "use client";
 
-import { api } from "@/convex/_generated/api";
-import { Id } from "@/convex/_generated/dataModel";
-import { useQuery } from "convex/react";
+import { api } from "@/lib/shim/api";
+import { Id } from "@/lib/shim/dataModel";
+import { useQuery } from "@/lib/shim/convex";
 import { MenuIcon } from "lucide-react";
 import { useParams } from "next/navigation";
 import Title from "./title";

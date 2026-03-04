@@ -1,6 +1,6 @@
 "use client";
 
-import { SignOutButton, useUser } from "@clerk/clerk-react";
+import { SignOutButton, useUser } from "@/lib/shim/clerk";
 import { ChevronsLeftRight } from "lucide-react";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -23,7 +23,7 @@ const UserItem = () => {
         >
           <div className="gap-x-2 flex items-center max-w-[150px]">
             <Avatar className="h-5 w-5">
-              <AvatarImage src={user?.imageUrl} />
+              <AvatarImage src={user?.imageUrl || undefined} />
             </Avatar>
             <span className="text-start font-medium line-clamp-1">
               {user?.fullName}&apos;s Notion
@@ -45,7 +45,7 @@ const UserItem = () => {
           <div className="flex items-center gap-x-2">
             <div className="rounded-md bg-secondary p-1">
               <Avatar className="h-8 w-8">
-                <AvatarImage src={user?.imageUrl} />
+                <AvatarImage src={user?.imageUrl || undefined} />
               </Avatar>
             </div>
             <div className="space-y-1">

@@ -7,9 +7,9 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import { Button } from "./ui/button";
 import useCoverImage from "@/hooks/use-cover-image";
-import { useMutation } from "convex/react";
-import { api } from "@/convex/_generated/api";
-import { Id } from "@/convex/_generated/dataModel";
+import { useMutation } from "@/lib/shim/convex";
+import { api } from "@/lib/shim/api";
+import { Id } from "@/lib/shim/dataModel";
 import { Skeleton } from "@/components/ui/skeleton";
 
 type Props = {

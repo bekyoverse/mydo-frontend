@@ -1,8 +1,8 @@
 "use client";
 
-import { api } from "@/convex/_generated/api";
-import { Doc, Id } from "@/convex/_generated/dataModel";
-import { useQuery } from "convex/react";
+import { api } from "@/lib/shim/api";
+import { Doc, Id } from "@/lib/shim/dataModel";
+import { useQuery } from "@/lib/shim/convex";
 import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import Item from "./item";

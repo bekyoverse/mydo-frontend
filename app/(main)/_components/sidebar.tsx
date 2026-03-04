@@ -12,10 +12,10 @@ import {
 import { useParams, usePathname, useRouter } from "next/navigation";
 import { ElementRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
-import { useMutation } from "convex/react";
+import { useMutation } from "@/lib/shim/convex";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
-import { api } from "@/convex/_generated/api";
+import { api } from "@/lib/shim/api";
 import {
   Popover,
   PopoverTrigger,

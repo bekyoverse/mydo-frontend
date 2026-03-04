@@ -1,8 +1,8 @@
 import ConfirmModal from "@/components/modals/confirm-modal";
 import { Button } from "@/components/ui/button";
-import { api } from "@/convex/_generated/api";
-import { Id } from "@/convex/_generated/dataModel";
-import { useMutation } from "convex/react";
+import { api } from "@/lib/shim/api";
+import { Id } from "@/lib/shim/dataModel";
+import { useMutation } from "@/lib/shim/convex";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { toast } from "sonner";

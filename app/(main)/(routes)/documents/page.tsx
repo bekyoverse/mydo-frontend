@@ -1,12 +1,12 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useUser } from "@clerk/clerk-react";
-import { useMutation } from "convex/react";
+import { useUser } from "@/lib/shim/clerk";
+import { useMutation } from "@/lib/shim/convex";
 import { PlusCircle } from "lucide-react";
 import Image from "next/image";
 import React from "react";
-import { api } from "@/convex/_generated/api";
+import { api } from "@/lib/shim/api";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 

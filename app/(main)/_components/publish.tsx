@@ -6,10 +6,10 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { api } from "@/convex/_generated/api";
-import { Doc } from "@/convex/_generated/dataModel";
+import { api } from "@/lib/shim/api";
+import { Doc } from "@/lib/shim/dataModel";
 import useOrigin from "@/hooks/use-origin";
-import { useMutation } from "convex/react";
+import { useMutation } from "@/lib/shim/convex";
 import { Check, Copy, Globe } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";

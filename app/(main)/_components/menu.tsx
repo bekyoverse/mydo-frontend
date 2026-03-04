@@ -1,6 +1,6 @@
 "use client";
 
-import { Id } from "@/convex/_generated/dataModel";
+import { Id } from "@/lib/shim/dataModel";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,9 +10,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useRouter } from "next/navigation";
-import { useUser } from "@clerk/clerk-react";
-import { useMutation } from "convex/react";
-import { api } from "@/convex/_generated/api";
+import { useUser } from "@/lib/shim/clerk";
+import { useMutation } from "@/lib/shim/convex";
+import { api } from "@/lib/shim/api";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { MoreHorizontal, TrashIcon } from "lucide-react";

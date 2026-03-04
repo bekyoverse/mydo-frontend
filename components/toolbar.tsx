@@ -1,10 +1,10 @@
-import { Doc } from "@/convex/_generated/dataModel";
+import { Doc } from "@/lib/shim/dataModel";
 import IconPicker from "./icon-picker";
 import { Button } from "@/components/ui/button";
 import { ImageIcon, Smile, X } from "lucide-react";
 import { ElementRef, useRef, useState } from "react";
-import { useMutation } from "convex/react";
-import { api } from "@/convex/_generated/api";
+import { useMutation } from "@/lib/shim/convex";
+import { api } from "@/lib/shim/api";
 import TextareaAutosize from "react-textarea-autosize";
 import useCoverImage from "@/hooks/use-cover-image";
 

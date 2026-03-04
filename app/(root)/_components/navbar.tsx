@@ -6,8 +6,8 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { useIsScrolled } from "@/hooks/use-is-Scrolled";
 import { cn } from "@/lib/utils";
-import { SignInButton, UserButton } from "@clerk/clerk-react";
-import { useConvexAuth } from "convex/react";
+import { SignInButton, UserButton } from "@/lib/shim/clerk";
+import { useConvexAuth } from "@/lib/shim/convex";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 

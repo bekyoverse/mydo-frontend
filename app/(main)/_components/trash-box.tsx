@@ -3,9 +3,9 @@
 import Loading from "@/components/Loading";
 import ConfirmModal from "@/components/modals/confirm-modal";
 import { Input } from "@/components/ui/input";
-import { api } from "@/convex/_generated/api";
-import { Id } from "@/convex/_generated/dataModel";
-import { useMutation, useQuery } from "convex/react";
+import { api } from "@/lib/shim/api";
+import { Id } from "@/lib/shim/dataModel";
+import { useMutation, useQuery } from "@/lib/shim/convex";
 import { Search, Trash, Undo } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";

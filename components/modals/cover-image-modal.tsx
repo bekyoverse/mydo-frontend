@@ -4,10 +4,10 @@ import useCoverImage from "@/hooks/use-cover-image";
 import { Dialog, DialogContent, DialogHeader } from "@/components/ui/dialog";
 import { useState } from "react";
 import { useEdgeStore } from "@/lib/edgestore";
-import { useMutation } from "convex/react";
-import { api } from "@/convex/_generated/api";
+import { useMutation } from "@/lib/shim/convex";
+import { api } from "@/lib/shim/api";
 import { useParams } from "next/navigation";
-import { Id } from "@/convex/_generated/dataModel";
+import { Id } from "@/lib/shim/dataModel";
 import { SingleImageDropzone } from "@/components/image-dropzone";
 
 const CoverImageModal = () => {

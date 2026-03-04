@@ -3,9 +3,9 @@
 import CoverImage from "@/components/cover-image";
 import Toolbar from "@/components/toolbar";
 import { Skeleton } from "@/components/ui/skeleton";
-import { api } from "@/convex/_generated/api";
-import { Id } from "@/convex/_generated/dataModel";
-import { useMutation, useQuery } from "convex/react";
+import { api } from "@/lib/shim/api";
+import { Id } from "@/lib/shim/dataModel";
+import { useMutation, useQuery } from "@/lib/shim/convex";
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
 

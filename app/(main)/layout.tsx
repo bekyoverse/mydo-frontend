@@ -1,7 +1,7 @@
 "use client";
 
 import Loading from "@/components/Loading";
-import { useConvexAuth } from "convex/react";
+import { useConvexAuth } from "@/lib/shim/convex";
 import { redirect } from "next/navigation";
 import SideBar from "./_components/sidebar";
 import SearchCommand from "@/components/search-command";

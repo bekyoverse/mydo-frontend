@@ -3,9 +3,9 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
-import { api } from "@/convex/_generated/api";
-import { Doc } from "@/convex/_generated/dataModel";
-import { useMutation } from "convex/react";
+import { api } from "@/lib/shim/api";
+import { Doc } from "@/lib/shim/dataModel";
+import { useMutation } from "@/lib/shim/convex";
 import { useRef, useState } from "react";
 
 interface Props {
