@@ -15,7 +15,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         async session({ session, token }) {
             if (token?.sub && session.user) {
                 session.user.id = token.sub;
-                session.user.id = token.sub;
             }
             return session;
         },
@@ -27,6 +26,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         },
     },
     session: { strategy: "jwt" },
-    secret: process.env.AUTH_SECRET || process.env.NEXTAUTH_SECRET,
+    secret: process.env.AUTH_SECRET,
     debug: process.env.NODE_ENV === "development",
 });
