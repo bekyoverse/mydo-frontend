@@ -9,11 +9,12 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         }),
     ],
     pages: {
-        signIn: "/", // We use the main page for sign in
+        signIn: "/",
     },
     callbacks: {
         async session({ session, token }) {
             if (token?.sub && session.user) {
+                session.user.id = token.sub;
                 session.user.id = token.sub;
             }
             return session;
@@ -26,6 +27,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         },
     },
     session: { strategy: "jwt" },
-    debug: true,
-    secret: process.env.AUTH_SECRET,
+    secret: process.env.AUTH_SECRET || process.env.NEXTAUTH_SECRET,
+    debug: process.env.NODE_ENV === "development",
 });
