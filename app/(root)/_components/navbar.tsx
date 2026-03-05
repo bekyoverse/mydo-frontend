@@ -34,7 +34,7 @@ const Navbar = () => {
             </SignInButton>
             <SignInButton mode="modal">
               <Button size={"sm"} className="hidden md:flex">
-                Get Notion free
+                Get Mydo free
               </Button>
             </SignInButton>
           </>
@@ -46,7 +46,7 @@ const Navbar = () => {
               className={cn(buttonVariants({ size: "sm" }), "hidden md:flex")}
               href={"/documents"}
             >
-              Enter Notion
+              Enter Mydo
               <ArrowRight className="h-4 w-4 ml-2" />
             </Link>
           </>

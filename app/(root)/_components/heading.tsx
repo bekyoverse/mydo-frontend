@@ -38,7 +38,7 @@ const Heading = () => {
       {!isLoading && !isAuthenticated && (
         <SignInButton mode="modal">
           <Button size={"lg"} className="bg-white text-black hover:bg-neutral-200 px-8 py-6 text-lg rounded-full transition-all hover:scale-105">
-            Get Mydo Pro
+            Get Mydo Free
             <ArrowRight className="h-5 w-5 ml-2" />
           </Button>
         </SignInButton>

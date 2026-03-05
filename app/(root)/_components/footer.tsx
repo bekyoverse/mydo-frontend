@@ -8,12 +8,7 @@ const Footer = () => {
         <Logo />
       </span>
       <div className="md:ml-auto w-full justify-between md:justify-end flex items-center gap-x-2 text-muted-foreground">
-        <Button variant="ghost" size="sm">
-          Privacy Policy
-        </Button>
-        <Button variant="ghost" size="sm">
-          Terms & Conditions
-        </Button>
+        <p className="text-sm">© 2026 Mydo AI. All rights owned by user.</p>
       </div>
     </div>
   );
