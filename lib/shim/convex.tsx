@@ -8,11 +8,12 @@ const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:800
 // This acts as our generic GET hook (replaces Convex useQuery)
 export const useQuery = (endpoint: string, args?: any) => {
     const { data: session } = useSession();
+    const user = session?.user as any;
     const [data, setData] = useState<any>(undefined);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        if (!session?.user?.id) {
+        if (!user?.id && !user?.email) {
             setData(undefined);
             setIsLoading(false);
             return;
@@ -29,7 +30,7 @@ export const useQuery = (endpoint: string, args?: any) => {
                 }
 
                 const res = await fetch(url.toString(), {
-                    headers: { 'Authorization': `Bearer ${session.user.id}` }
+                    headers: { 'Authorization': `Bearer ${user?.id || user?.email}` }
                 });
 
                 if (res.ok) {
@@ -46,7 +47,7 @@ export const useQuery = (endpoint: string, args?: any) => {
         };
 
         fetchData();
-    }, [endpoint, JSON.stringify(args), session?.user?.id]);
+    }, [endpoint, JSON.stringify(args), user?.id || user?.email]);
 
     return isLoading ? undefined : data;
 };
@@ -54,9 +55,10 @@ export const useQuery = (endpoint: string, args?: any) => {
 // This acts as our generic POST/PUT hook (replaces Convex useMutation)
 export const useMutation = (endpoint: string) => {
     const { data: session } = useSession();
+    const mutUser = session?.user as any;
 
     return async (...args: any[]) => {
-        if (!session?.user?.id) throw new Error("Unauthorized");
+        if (!mutUser?.id && !mutUser?.email) throw new Error("Unauthorized");
 
         const path = typeof endpoint === "string" ? `/${endpoint}` : `/${Object.values(endpoint || {})[0]}`;
         const url = `${BACKEND_URL}${path}`;
@@ -67,7 +69,7 @@ export const useMutation = (endpoint: string) => {
         const res = await fetch(url, {
             method,
             headers: {
-                'Authorization': `Bearer ${session.user.id}`,
+                'Authorization': `Bearer ${mutUser?.id || mutUser?.email}`,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(args[0] || {})
