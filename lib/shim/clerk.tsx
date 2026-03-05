@@ -9,15 +9,16 @@ export const useUser = () => {
     const { data: session, status } = useSession();
     const isLoaded = status !== "loading";
     const isSignedIn = status === "authenticated";
+    const user = session?.user as any;
 
     return {
-        user: session?.user ? {
-            id: session.user.id,
-            firstName: session.user.name?.split(" ")[0],
-            lastName: session.user.name?.split(" ").slice(1).join(" "),
-            fullName: session.user.name,
-            imageUrl: session.user.image,
-            emailAddresses: [{ emailAddress: session.user.email }]
+        user: user ? {
+            id: user.id || user.email,
+            firstName: user.name?.split(" ")[0],
+            lastName: user.name?.split(" ").slice(1).join(" "),
+            fullName: user.name,
+            imageUrl: user.image,
+            emailAddresses: [{ emailAddress: user.email }]
         } : null,
         isSignedIn,
         isLoaded
@@ -26,10 +27,11 @@ export const useUser = () => {
 
 export const useAuth = () => {
     const { data: session, status } = useSession();
+    const user = session?.user as any;
     return {
         isLoaded: status !== "loading",
         isSignedIn: status === "authenticated",
-        userId: session?.user?.id,
+        userId: user?.id || user?.email,
         sessionId: "mock_session",
         signOut: async () => signOut(),
     };
